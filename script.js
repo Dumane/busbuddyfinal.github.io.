@@ -95,7 +95,7 @@ const translations = {
         "service-title": "luhlolojikelele Lwsevisi",
         "service-description": "Tfola luhambo lolungenamthungo ngelusito lwetfu loluphelele, lolunetinhlelo letilusito, tindleko tekugibela letincintisanako, kanye nekunakekelwa kwelikhasimende lokute licala. Emamephu etfu lasebenta ndzawonye aniketa umbono weluhambo, lokucinisekisa kutsi uyati kahle kutsi yini longayilindzela ngaphambi kwekutsi uhambe.",
         "service-schedules": "TIKHATSI TEKUHAMBA",
-        "schedules-description ": "Tfola luhambo lolungakhandzi tinkinga ngekutsi utfole imininingwane yetikhatsi tekuhamba netekufika.",
+        "schedules-description": "Tfola luhambo lolungakhandzi tinkinga ngekutsi utfole imininingwane yetikhatsi tekuhamba netekufika.",
         "service-fares": "Timali Tebhasi",
         "fares-description": "Finyelela kalula kubita kwemathikithi eluhambweni ngalunye ngekusebentisa luhlu lwetfu lolunemininingwane. Hlola luhlelo lwemabhasi kute utfole sikhatsi sekuhamba nesekufika, kanye nelinani lemali yekugibela.",
         "service-features": "TINTO LETIKHETSEKILE",
