@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BusBuddy - Search Results</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      font-weight: bold;
+      background-color: #f1f1f1;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1a73e8;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+    }
+
+    nav ul li a.active {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 5px;
+    }
+
+    .contact-btn {
+      background-color: #666;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      color: #f1f1f1;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .results-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    .route-header {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #666;
+      font-weight: bold;
+    }
+
+    .results-container {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 100px;
+    }
+
+    .calendar {
+      flex: 1;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .calendar h3 {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .calendar-nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .calendar-nav button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-weight: bold;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .calendar-dates {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .calendar-dates div {
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .calendar-dates div:hover {
+      background-color: #e0e0e0;
+    }
+
+    .available-buses {
+      flex: 2;
+    }
+
+    .available-buses h4 {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #333;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .bus-card {
+  position: relative; /* Enables absolute positioning for children */
+  background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+  border-radius: 10px;
+  border: 1px solid #e0e0e0; /* Border added back */
+  /* Padding order: top, right, bottom, left */
+  padding: 20px 140px 60px 20px;  
+  margin-bottom: 15px;
+  max-width: 1200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.bus-card:hover {
+  transform: translateY(-3px);
+}
+
+/* The image is now positioned at the top right corner */
+.bus-card img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  width: auto;
+  max-width: calc(140px - 40px); /* The reserved right padding (140px) minus 20px on each side = 100px max width */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+
+.bus-card h5 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.bus-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.bus-card-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.bus-card-buttons button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 10px;
+}
+
+.bus-card-buttons button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+    #moreBuses {
+      margin-top: 10px;
+    }
+
+    #busDropdown {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .popular-routes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.popular-routes h4 {
+  margin-bottom: 40px;
+  font-size: 25px;
+  color: #333;
+  text-align: center;
+}
+
+.route-cards-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.route-card {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.route-card h5 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.route-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.route-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 10px 0;
+  order: 2;
+}
+
+    .route-card button {
+            background-color: transparent;
+            border: 1px solid #007bff;
+            color: #007bff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .route-card button:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+    
+  /* Footer styles */
+     .main-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000; /* dark background */
+  color: #fff;            /* white text */
+  z-index: 100;           /* ensure it stays on top */
+}
+
+.footer-left select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-right a {
+  margin: 0 10px;
+}
+
+.footer-right img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 20px;
+    }
+
+    .modal-content p {
+      margin-bottom: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .time-date-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+#currentTime {
+  font-size: 48px; /* Larger font for time */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#currentDate {
+  font-size: 18px; /* Smaller font for date */
+  color: #666;
+}
+
+.map-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  margin-bottom: 80px; /* Adjust the value to be equal or slightly higher than your footer height */
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="250" height="60" viewBox="0 0 250 60">
+        <text x="0" y="45" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="48" fill="#1a73e8">
+          BusBuddy
+        </text>
+      </svg>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" data-translate="nav-home">Home</a></li>
+        <li><a href="Find-your-schedule.html" class="active" data-translate="nav-schedule">Find Your Bus Schedule</a></li>
+        <li><a href="Bus-fares-and-routes.html" data-translate="nav-travel-date">Bus Fares and Routes</a></li>
+      </ul>
+    </nav>
+    <button class="contact-btn" data-translate="contact-btn" onclick="window.location.href='contact-us.html'">? Contact Us</button>
+  </header>
+
+ <main>
+    <section class="results-section">
+      <div class="route-header">
+        <p data-translate="route-from"> From: <span id="fromLocation"> </span> <span data-translate="route-to"> To: </span> <span id="toLocation"></span></p>
+      </div>
+      <div class="results-container">
+        <!-- Calendar -->
+        <div class="calendar">
+          <div class="time-date-display">
+            <div id="currentTime"></div>
+            <div id="currentDate"></div>
+          </div>
+        </div>
+
+        <!-- Available Buses -->
+        <div class="available-buses">
+          <h4 data-translate="available-buses">Available Buses (<span id="busCount">0</span>)</h4>
+          <div id="busList"></div>
+          <!-- Dropdown for additional buses -->
+          <div id="moreBuses" style="display: none;">
+            <select id="busDropdown" onchange="viewBusDetails(this.value)">
+              <option value="" data-translate="more-buses">More buses...</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popular Routes -->
+      <div class="popular-routes">
+        <h4 data-translate="popular-routes">Popular routes</h4>
+        <div class="route-cards-container">
+          <div class="route-card">
+            <h5 data-translate="route-mbabane-nhlangano">Mbabane to Nhlangano</h5>
+            <p data-translate="daily-departures">Daily departures</p>
+            <p data-translate="journey-3h">3h journey</p>
+            <button onclick="viewSchedule('Mbabane to Nhlangano')" data-translate="view-schedule">View Schedule</button>
+          </div>
+          <div class="route-card">
+            <h5 data-translate="route-nhlangano-mbabane">Nhlangano to Mbabane</h5>
+            <p data-translate="daily-departures">Daily departures</p>
+            <p data-translate="journey-5h">5h journey</p>
+            <button onclick="viewSchedule('Nhlangano to Mbabane')" data-translate="view-schedule">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map container (initially hidden and with extra spacing) -->
+<div class="map-container" style="display: none; margin-top: 40px;">
+  <div id="map" style="width: 100%; height: 400px;"></div>
+</div>
+
+
+    </section>
+
+    <!-- Modal for Bus Details -->
+    <div id="busDetailsModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <h3 data-translate="bus-details">Bus Details</h3>
+        <p><strong data-translate="modal-route">Route:</strong> <span id="modalRoute"></span></p>
+        <p><strong data-translate="modal-departs">Departs:</strong> <span id="modalDeparture"></span></p>
+        <p><strong data-translate="modal-arrives">Arrives:</strong> <span id="modalArrival"></span></p>
+        <p><strong data-translate="modal-bus-name">Bus Name:</strong> <span id="modalBusName"></span></p>
+        <p><strong data-translate="modal-bus-number">Bus Number:</strong> <span id="modalBusNumber"></span></p>
+        <p><strong data-translate="modal-fare">Fare:</strong> <span id="modalFare"></span></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-left">
+      <select id="language-select" onchange="changeLanguage()">
+        <option value="en" data-translate="lang-english">English</option>
+        <option value="ss" data-translate="lang-siswati">Siswati</option>
+      </select>
+    </div>
+    <div class="footer-center">
+      <p>© 2024 BRAND INC. • <span data-translate="footer-privacy">PRIVACY</span> • <span data-translate="footer-terms">TERMS</span> • <span data-translate="footer-sitemap">SITEMAP</span></p>
+    </div>
+    <div class="footer-right">
+      <a href="#"><img src="icons8-x-50.png" alt="Twitter"></a>
+      <a href="#"><img src="icons8-instagram-50.png" alt="Instagram"></a>
+      <a href="#"><img src="icons8-facebook-50.png" alt="Facebook"></a>
+      <a href="#"><img src="icons8-youtube-50.png" alt="YouTube"></a>
+    </div>
+  </footer>
+
+  <script src="results.js"></script>
+  <!-- Your other HTML content -->
+
+<!-- Your main JavaScript code that initializes the bus routes and map -->
+<script>
+  let map;
+  let routes = [];
+  let currentPage = 1;
+  const rowsPerPage = 5;
+
+  // Set current day and date in the date-container
+  function displayCurrentDate() {
+    const dateContainer = document.getElementById('current-date');
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateContainer.textContent = today.toLocaleDateString('en-US', options);
+  }
+
+  // Call the function to display the date
+  displayCurrentDate();
+
+  // Initialize map with default center
+  function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 10,
+      center: { lat: -26.3167, lng: 31.1333 } // Default: Mbabane
+    });
+  }
+
+  // Fetch JSON data and populate table
+  async function fetchBusRoutes() {
+    try {
+      const response = await fetch('busData.json');
+      routes = await response.json();
+      displayTable(currentPage);
+      updatePagination();
+    } catch (error) {
+      console.error('Error fetching bus routes:', error);
+      alert('Failed to load bus routes. Please try again later.');
+    }
+  }
+
+  // New function: When clicking on the "View Route" button in a bus card,
+// show the map container at the bottom (unhide it), then scroll to it and display the route.
+function viewBusRoute(bus) {
+  // Get the map container element.
+  const mapContainer = document.querySelector('.map-container');
+  if (mapContainer) {
+    // Unhide the container.
+    mapContainer.style.display = 'block';
+    // Smoothly scroll the map container into view.
+    mapContainer.scrollIntoView({ behavior: 'smooth' });
+  }
+  // Now call showRouteMap with the bus object so the map displays the selected route.
+  showRouteMap(bus);
+}
+
+  // Show map for selected route
+  function showRouteMap(route) {
+    const bounds = new google.maps.LatLngBounds();
+    map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 10,
+      center: route.departureCoords,
+    });
+
+    const waypoints = [];
+
+    // Add Hlatsi stop for MR 3 route buses
+    if (route.via === "MR 3") {
+      waypoints.push({ location: { lat: -26.97, lng: 31.32 } }); // Example coordinates for Hlatsi
+    }
+
+    // Add Mankayane stop for buses via Mankayane
+    if (route.via.includes("Mankayane")) {
+      waypoints.push({ location: { lat: -26.6833, lng: 31.0833 } }); // Example coordinates for Mankayane
+    }
+
+    if (route.path && route.path !== "encoded_polyline_string_here") {
+      // Use cached polyline
+      const path = google.maps.geometry.encoding.decodePath(route.path);
+      const polyline = new google.maps.Polyline({
+        path: path,
+        geodesic: true,
+        strokeColor: "#FF0000",
+        strokeOpacity: 1.0,
+        strokeWeight: 2,
+      });
+      polyline.setMap(map);
+
+      // Add markers
+      new google.maps.Marker({
+        position: route.departureCoords,
+        map: map,
+        title: route.departure,
+      });
+      new google.maps.Marker({
+        position: route.destinationCoords,
+        map: map,
+        title: route.destination,
+      });
+
+      bounds.extend(route.departureCoords);
+      bounds.extend(route.destinationCoords);
+      map.fitBounds(bounds);
+    } else {
+      // Use Directions API with waypoints
+      const directionsService = new google.maps.DirectionsService();
+      const directionsRenderer = new google.maps.DirectionsRenderer({
+        map: map,
+        suppressMarkers: false,
+        polylineOptions: {
+          strokeColor: "#FF0000",
+          strokeOpacity: 1.0,
+          strokeWeight: 2,
+        },
+      });
+
+      directionsService.route(
+        {
+          origin: route.departureCoords,
+          destination: route.destinationCoords,
+          waypoints: waypoints,
+          travelMode: google.maps.TravelMode.DRIVING,
+        },
+        (result, status) => {
+          if (status === google.maps.DirectionsStatus.OK) {
+            directionsRenderer.setDirections(result);
+            console.log("Encoded polyline:", result.routes[0].overview_polyline);
+          } else {
+            console.error("Directions request failed:", status);
+            // Fallback: Add markers and a straight-line route
+            new google.maps.Marker({
+              position: route.departureCoords,
+              map: map,
+              title: route.departure,
+            });
+            new google.maps.Marker({
+              position: route.destinationCoords,
+              map: map,
+              title: route.destination,
+            });
+            const fallbackPath = new google.maps.Polyline({
+              path: [route.departureCoords, route.destinationCoords],
+              geodesic: true,
+              strokeColor: "#FF0000",
+              strokeOpacity: 1.0,
+              strokeWeight: 2,
+            });
+            fallbackPath.setMap(map);
+            bounds.extend(route.departureCoords);
+            bounds.extend(route.destinationCoords);
+            map.fitBounds(bounds);
+            alert("Could not load route. Showing approximate path.");
+          }
+        }
+      );
+    }
+  }
+
+  // Update pagination buttons
+  function updatePagination() {
+    const prevButton = document.getElementById('prev-page');
+    const nextButton = document.getElementById('next-page');
+    const totalPages = Math.ceil(routes.length / rowsPerPage);
+
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === totalPages;
+  }
+
+  // Pagination event listeners
+  document.getElementById('prev-page').addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      displayTable(currentPage);
+      updatePagination();
+    }
+  });
+
+  document.getElementById('next-page').addEventListener('click', () => {
+    const totalPages = Math.ceil(routes.length / rowsPerPage);
+    if (currentPage < totalPages) {
+      currentPage++;
+      displayTable(currentPage);
+      updatePagination();
+    }
+  });
+
+  // Initialize bus routes after functions are defined
+  fetchBusRoutes();
+</script>
+
+<!-- Google Maps API Script -->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOaOOOmmUKhhguhOxhyOjyUEP-dWcXJ0g&libraries=geometry,directions&callback=initMap">
+</script>
+</body>
+</html>
+</body>
+</html>

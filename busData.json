@@ -1,0 +1,1097 @@
+[
+  {
+      "route": "Mbabane to Nhlangano",
+      "departure": "7:00 AM",
+      "arrival": "9:30 AM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "muhle Tours",
+      "busNumber": "ST123",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    {
+      "route": "Mbabane to Nhlangano",
+      "departure": "6:30 AM",
+      "arrival": "9:30 AM",
+      "available": true,
+      "journey": "3h",
+      "via": "Mankayane-M",
+      "image": "IMG_2082.JPG",
+      "busName": "MGEWU 1",
+      "busNumber": "CR456",
+      "fare": "E70",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+
+    {
+      "route": "Mbabane to Nhlangano",
+      "departure": "1:30 PM",
+      "arrival": "4:30 PM",
+      "available": true,
+      "journey": "3h",
+      "via": "Mankayane-M",
+      "image": "IMG_2082.JPG",
+      "busName": "MGEWU 1",
+      "busNumber": "CR457",
+      "fare": "E70",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+    
+
+{
+      "route": "Mbabane to Nhlangano",
+      "departure": "11:00 AM",
+      "arrival": "2:00 PM",
+      "available": true,
+      "journey": "3h",
+      "via": "Mankayane-M",
+      "image": "IMG_2082.JPG",
+      "busName": "MGEWU 2",
+      "busNumber": "CR456",
+      "fare": "E70",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+    
+
+{
+      "route": "Mbabane to Nhlangano",
+      "departure": "5:00 PM",
+      "arrival": "8:00 PM",
+      "available": true,
+      "journey": "3h",
+      "via": "Mankayane-M",
+      "image": "IMG_2082.JPG",
+      "busName": "MGEWU 2",
+      "busNumber": "CR457",
+      "fare": "E70",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+    {
+      "route": "Mbabane to Nhlangano",
+      "departure": "09:30 AM",
+      "arrival": "11:30 AM",
+      "available": false,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2084.JPG",
+      "busName": "Khulumezako",
+      "busNumber": "LH101",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    {
+      "route": "Mbabane to Nhlangano",
+      "departure": "9:00 AM",
+      "arrival": "11:00 AM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Buyasambe",
+      "busNumber": "LH107",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    {
+      "route": "Mbabane to Nhlangano",
+      "departure": "11:40 AM",
+      "arrival": "1:40 PM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "muhle Tours",
+      "busNumber": "ST128",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    {
+      "route": "Mbabane to Nhlangano",
+      "departure": "3:40 PM",
+      "arrival": "5:40 PM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "muhle Tours",
+      "busNumber": "ST128",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    {
+      "route": "Mbabane to Nhlangano",
+      "departure": "1:40 PM",
+      "arrival": "4:00 PM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "muhle Tours",
+      "busNumber": "ST123",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+      "route": "Nhlangano to Mbabane",
+      "departure": "6:00 AM",
+      "arrival": "8:30 AM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2084.JPG",
+      "busName": "Khulumezako",
+      "busNumber": "LH101",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "destinationCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    {
+      "route": "Nhlangano to Mbabane",
+      "departure": "10:40 AM",
+      "arrival": "1:00 PM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "muhle Tours",
+      "busNumber": "ST123",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "destinationCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    {
+      "route": "Nhlangano to Mbabane",
+      "departure": "5:00 PM",
+      "arrival": "7:00 PM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "muhle Tours",
+      "busNumber": "ST126",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "destinationCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    {
+      "route": "Nhlangano to Mbabane",
+      "departure": "8:00 AM",
+      "arrival": "10:00 AM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2084.JPG",
+      "busName": "Buyasambe",
+      "busNumber": "LH107",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "destinationCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    {
+      "route": "Nhlangano to Mbabane",
+      "departure": "9:40 AM",
+      "arrival": "11:40 AM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2084.JPG",
+      "busName": "Khulumezako",
+      "busNumber": "LH101",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "destinationCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+
+    {
+      "route": "Nhlangano to Mbabane",
+      "departure": "3:15 PM",
+      "arrival": "5:00 PM",
+      "available": true,
+      "journey": "2h",
+      "via": "Mankayane-M",
+      "image": "IMG_2082.JPG",
+      "busName": "MGEWU 2",
+      "busNumber": "CR457",
+      "fare": "E70",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+
+
+     {
+      "route": "Nhlangano to Mbabane",
+      "departure": "5:05 PM",
+      "arrival": "8:05 PM",
+      "available": true,
+      "journey": "2h",
+      "via": "Mankayane-M",
+      "image": "IMG_2082.JPG",
+      "busName": "MGEWU 1",
+      "busNumber": "CR456",
+      "fare": "E70",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+    {
+      "route": "Nhlangano to Mbabane",
+      "departure": "7:00 AM",
+      "arrival": "10:00 AM",
+      "available": true,
+      "journey": "2h",
+      "via": "Mankayane-M",
+      "image": "IMG_2082.JPG",
+      "busName": "MGEWU 2",
+      "busNumber": "CR457",
+      "fare": "E70",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    
+
+{
+      "route": "Nhlangano to Mbabane",
+      "departure": "10:15 AM",
+      "arrival": "1:15 PM",
+      "available": true,
+      "journey": "2h",
+      "via": "Mankayane-M",
+      "image": "IMG_2082.JPG",
+      "busName": "MGEWU 1",
+      "busNumber": "CR456",
+      "fare": "E70",
+      "departureCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+    {
+      "route": "Nhlangano to Mbabane",
+      "departure": "2:45 PM",
+      "arrival": "4:45 PM",
+      "available": true,
+      "journey": "2h",
+      "via": "MR 3",
+      "image": "IMG_2084.JPG",
+      "busName": "Buyasambe",
+      "busNumber": "LH102",
+      "fare": "E80",
+      "departureCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "destinationCoords": {
+        "lat": -26.3167,
+        "lng": 31.1333
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+      "route": "Manzini to Nhlangano",
+      "departure": "5:45 AM",
+      "arrival": "7:15 AM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Lincomo lesive",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+    {
+      "route": "Manzini to Nhlangano",
+      "departure": "7:30 AM",
+      "arrival": "9:00 AM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Mayvile",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    
+    {
+      "route": "Manzini to Nhlangano",
+      "departure": "9:30 AM",
+      "arrival": "11:00 AM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Makhonkhosi",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    
+    {
+      "route": "Manzini to Nhlangano",
+      "departure": "10:30 AM",
+      "arrival": "12:00 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Sifiso sami",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    
+    {
+      "route": "Manzini to Nhlangano",
+      "departure": "12:30 PM",
+      "arrival": "2:00 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Lincomo lesive",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    
+    {
+      "route": "Manzini to Nhlangano",
+      "departure": "2:30 PM",
+      "arrival": "4:00 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Mayvile",
+      "busNumber": "ST123",
+      "fare": "E60",
+     "departureCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    
+    {
+      "route": "Manzini to Nhlangano",
+      "departure": "4:30 PM",
+      "arrival": "6:00 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Makhonkhosi",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Manzini to Nhlangano",
+      "departure": "4:45 PM",
+      "arrival": "6:15 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Sifiso sami",
+      "busNumber": "ST123",
+      "fare": "E60",
+    "departureCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+
+      },
+      "destinationCoords": {
+        "lat": -27.1167,
+        "lng": 31.2
+      },
+      "path": "encoded_polyline_string_here"
+    } ,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "5:30 AM",
+      "arrival": "7:00 AM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Khombindlela",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "7:30 AM",
+      "arrival": "9:00 AM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Sifiso sami",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "8:30 AM",
+      "arrival": "10:00 AM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Mayvile",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "9:15 AM",
+      "arrival": "10:45 AM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Lincomo lesive",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "10:00 AM",
+      "arrival": "11:30 AM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Makhonkhosi",
+      "busNumber": "ST123",
+     "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "10:30 AM",
+      "arrival": "12:00 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Eternity",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "11:00 AM",
+      "arrival": "12:30 AM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Khombindlela",
+      "busNumber": "ST123",
+      "fare": "E60",
+     "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "1:15 PM",
+      "arrival": "2:45 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Phinduvuke",
+      "busNumber": "ST123",
+      "fare": "E60",
+     "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "1:30 PM",
+      "arrival": "2:45 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Lincomo lesive",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "2:00 PM",
+      "arrival": "3:30 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Makhonkhosi",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "2:15 PM",
+      "arrival": "3:45 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Sifiso sami",
+      "busNumber": "ST123",
+      "fare": "E60",
+    "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "2:30 PM",
+      "arrival": "4:00 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Mayvile",
+      "busNumber": "ST123",
+      "fare": "E60",
+     "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "3:00 PM",
+      "arrival": "4:30 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Makhonkhosi",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "3:15 PM",
+      "arrival": "4:45 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Sifiso sami",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "4:00 PM",
+      "arrival": "5:30 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Lincomo lesive",
+      "busNumber": "ST123",
+      "fare": "E60",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    },
+
+    {
+      "route": "Nhlangano to Manzini",
+      "departure": "5:15 PM",
+      "arrival": "6:45 PM",
+      "available": true,
+      "journey": "1h 30m",
+      "via": "MR 3",
+      "image": "IMG_2082.JPG",
+      "busName": "Eternity",
+      "busNumber": "ST123",
+      "departureCoords": {
+         "lat": -27.1167,
+        "lng": 31.2
+
+      },
+      "destinationCoords": {
+        "lat": -26.4976,
+        "lng": 31.3557
+      },
+      "path": "encoded_polyline_string_here"
+    }
+
+    
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+]

@@ -1,0 +1,210 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.contact-btn {
+    background-color: #666;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #f1f1f1;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #1a73e8;
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Bus Images Section */
+.bus-images {
+  display: flex;             /* Arrange images in a row */
+  justify-content: center;   /* Center the images horizontally */
+  align-items: center;       /* Center images vertically */
+  gap: 20px;                 /* Space between images */
+  padding: 20px 0;
+}
+
+/* Style for each image */
+.bus-images img {
+  height: 360px;             /* Enforces a consistent height */
+  border-radius: 15px;       /* Rounds the edges - increase value for more rounding */
+  object-fit: cover;         /* Ensures the image covers the designated area without distortion */
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+    background-color: #f9f9f9;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Service Overview Section */
+.service-overview {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-overview h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    text-decoration: underline;
+}
+
+.service-overview p {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.service-overview ul {
+    text-align: center;
+    list-style: none;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.service-overview ul li {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.service-overview ul li ul {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.service-overview ul li strong {
+    text-align: center;
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Informational Overview Section */
+.informational-overview {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+}
+
+.informational-overview h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.informational-overview p {
+    font-size: 18px;
+    color: #333;
+}
+
+ .main-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000; /* dark background */
+  color: #fff;            /* white text */
+  z-index: 100;           /* ensure it stays on top */
+}
+
+.footer-left select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-right a {
+  margin: 0 10px;
+}
+
+.footer-right img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}

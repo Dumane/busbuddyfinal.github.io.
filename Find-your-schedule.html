@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BusBuddy</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #fff;
+    }
+    
+    /* Header styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      font-weight: bold;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1a73e8;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin: 0 15px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+    }
+    
+    nav ul li a.active {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 5px;
+    }
+    
+    .contact-btn {
+      background-color: #666;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      color: #f1f1f1;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    
+    /* Search Section */
+    .search-section {
+      text-align: center;
+      margin-top: 100px;
+      padding: 60px 20px;
+      background-image: url('PNG image.png'); /* Replace with actual image path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+    
+    .search-section h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #000;
+    }
+    
+    .search-form {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 30px;
+      padding: 15px 25px;
+      width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: width 0.3s ease;
+    }
+    
+    .search-bar:hover {
+      width: 550px;
+    }
+    
+    .search-bar input {
+      background: transparent;
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 18px;
+      color: #333;
+      text-align: center;
+    }
+    
+    .search-bar button {
+      background: url('icons8-search-40.png') no-repeat right;
+      width: 24px;
+      height: 24px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    /* Suggestion Box Styles */
+.suggestions-box {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* Centers it horizontally */
+  background: #666;
+  border: 1px solid #ccc;
+  width: 80%; /* Adjust width as needed */
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  background: #666;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.suggestion-item:hover {
+  background: #333;
+}
+
+    
+    /* Footer styles */
+     .main-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000; /* dark background */
+  color: #fff;            /* white text */
+  z-index: 100;           /* ensure it stays on top */
+}
+
+.footer-left select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-right a {
+  margin: 0 10px;
+}
+
+.footer-right img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="250" height="60" viewBox="0 0 250 60">
+        <text x="0" y="45"
+              font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+              font-size="48"
+              fill="#1a73e8">
+          BusBuddy
+        </text>
+      </svg>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" data-translate="nav-home">Home</a></li>
+        <li><a href="Find-your-schedule.html" class="active" data-translate="nav-schedule">Find Your Bus Schedule</a></li>
+        <li><a href="Bus-fares-and-routes.html" data-translate="nav-travel-date">Bus Fares and Routes</a></li>
+      </ul>
+    </nav>
+    <button class="contact-btn" data-translate="contact-btn" onclick="window.location.href='contact-us.html'">
+      ? Contact Us
+    </button>
+  </header>
+  <main>
+    <section class="search-section">
+      <h1 data-translate="search-title">FIND YOUR BUS SCHEDULE</h1>
+      <div class="search-form">
+        <input
+          type="text"
+          id="locationInput"
+          placeholder="WHERE FROM - WHERE TO"
+          onfocus="showSuggestions()"
+          oninput="filterSuggestions()"
+          class="location-input"
+          data-translate-placeholder="search-placeholder"
+          style="border: none; outline: none; background: transparent; width: 100%; font-size: 18px; color: #333; text-align: center;"
+        />
+        <!-- Suggestions will appear here -->
+        <div id="suggestions" class="suggestions-box"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="main-footer">
+    <div class="footer-left">
+      <select id="language-select" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="ss">Siswati</option>
+      </select>
+    </div>
+    <div class="footer-center">
+      <p>© 2024 BRAND INC. • PRIVACY • TERMS • SITEMAP</p>
+    </div>
+    <div class="footer-right">
+      <a href="#"><img src="icons8-x-50.png" alt="Twitter"></a>
+      <a href="#"><img src="icons8-instagram-50.png" alt="Instagram"></a>
+      <a href="#"><img src="icons8-facebook-50.png" alt="Facebook"></a>
+      <a href="#"><img src="icons8-youtube-50.png" alt="YouTube"></a>
+    </div>
+  </footer>
+    
+
+  <script src="script.js"></script>
+  <script>
+    // Sample suggestions for the search input
+    const suggestions = [
+      "Mbabane to Nhlangano",
+      "Nhlangano to Mbabane",
+      "Manzini to Nhlangano",
+      "Nhlangano to Manzini",
+
+      // Add more routes as needed
+    ];
+
+    // Show suggestions when the input is focused
+    function showSuggestions() {
+      const suggestionsBox = document.getElementById("suggestions");
+      suggestionsBox.style.display = "block";
+      filterSuggestions();
+    }
+
+    // Filter suggestions based on the input value
+    function filterSuggestions() {
+      const input = document.getElementById("locationInput").value.toLowerCase();
+      const suggestionsBox = document.getElementById("suggestions");
+      suggestionsBox.innerHTML = "";
+
+      const filteredSuggestions = suggestions.filter((suggestion) =>
+        suggestion.toLowerCase().includes(input)
+      );
+
+      filteredSuggestions.forEach((suggestion) => {
+        const suggestionItem = document.createElement("div");
+        suggestionItem.classList.add("suggestion-item");
+        suggestionItem.textContent = suggestion;
+        suggestionItem.onclick = () => {
+          document.getElementById("locationInput").value = suggestion;
+          suggestionsBox.style.display = "none";
+          redirectToResults(suggestion);
+        };
+        suggestionsBox.appendChild(suggestionItem);
+      });
+
+      // If there are no filtered suggestions, hide the suggestions box
+      if (filteredSuggestions.length === 0 && input.trim() !== "") {
+        suggestionsBox.style.display = "none";
+      }
+    }
+
+    // Redirect to results page with the selected route
+    function redirectToResults(route) {
+      window.location.href = `results.html?route=${encodeURIComponent(route)}`;
+    }
+
+    // Handle the Enter key press to trigger the search
+    document.getElementById("locationInput").addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        const route = document.getElementById("locationInput").value;
+        if (route) {
+          redirectToResults(route);
+        }
+      }
+    });
+
+    // Close the suggestion box when clicking outside
+    document.addEventListener("click", function (event) {
+      let suggestionsBox = document.getElementById("suggestions");
+      
+      // Check if the clicked element is NOT inside the suggestions box or the search input
+      if (!suggestionsBox.contains(event.target) && !event.target.matches("#locationInput")) {
+        suggestionsBox.style.display = "none";
+      }
+    });
+
+    // Placeholder for language change function
+    function changeLanguage() {
+      const lang = document.getElementById("language-select").value;
+      console.log("Language changed to:", lang);
+      // Add translation logic here if needed
+    }
+</script>
+</body>
+</html>

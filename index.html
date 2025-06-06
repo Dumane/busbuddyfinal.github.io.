@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusBuddy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="250" height="60" viewBox="0 0 250 60">
+                <text x="0" y="45"
+                    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+                    font-size="48"
+                    fill="#1a73e8">
+                    BusBuddy
+                </text>
+            </svg>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active" data-translate="nav-home">Home</a></li>
+                <li><a href="Find-your-schedule.html" data-translate="nav-schedule">Find your Bus Schedule</a></li>
+                <li><a href="Bus-fares-and-routes.html" data-translate="nav-travel-date">Bus Fares and Routes</a></li>
+            </ul>
+        </nav>
+        <button class="contact-btn" data-translate="contact-btn" onclick="window.location.href='contact-us.html'">? Contact Us</button>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 data-translate="hero-title">YOUR BUS JOURNEY<br>SIMPLIFIED</h1>
+        <p data-translate="hero-subtitle">Plan, track, and enjoy seamless travel with BusBuddy.</p>
+    </section>
+    <!-- Image Section -->
+<section class="bus-images">
+  <img src="WhatsApp Image 2024-11-22 at 10.44.25_6f38dc56.png" alt="Bus image 1">
+  <img src="WhatsApp Image 2024-11-22 at 10.44.26_f8295184.jpg" alt="Bus image 2">
+</section>
+    <!-- Footer Links -->
+    <footer class="footer-links">
+        <a href="#" data-translate="footer-webinars">Webinars</a>
+        <a href="#" data-translate="footer-organization">Organization</a>
+    </footer>
+    <!-- Service Overview Section -->
+    <section class="service-overview">
+        <h2 data-translate="service-title">SERVICE OVERVIEW</h2>
+        <p data-translate="service-description">Experience seamless travel with our comprehensive service offering convenient schedules, competitive fares and exceptional customer care. Our interactive maps provide a visual representation of the journey ensuring you know exactly what to expect before you travel.</p>
+        <ul>
+            <li><strong data-translate="service-schedules">SCHEDULES</strong>
+                <ul>
+                    <p data-translate="schedules-description">Experience hassle-free travel with detailed departure and arrival times at your fingertips.</p>
+                </ul>
+            </li>
+            <li><strong data-translate="service-fares">FARES</strong>
+                <ul>
+                    <p data-translate="fares-description">Easily access fare prices for each journey with our detailed listings. Simply check the bus schedules to see departure and arrival times, along with the corresponding fare for each route.</p>
+                </ul>
+            </li>
+            <li><strong data-translate="service-features">SPECIAL FEATURES</strong>
+                <ul>
+                    <li data-translate="feature-tracking">Visualize your journey effortlessly with interactive maps.</li>
+                    <li data-translate="feature-amenities">detailed departure and arrival times.</li>
+                    <li data-translate="feature-model">Choose the perfect model for an enriched travel experience</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong data-translate="service-join">JOIN US FOR A HASSLE-FREE JOURNEY!</strong></p>
+    </section>
+    <!-- Informational Overview Section with Notice -->
+    <section class="informational-overview">
+        <h2 data-translate="notice-title">Important Notice Regarding Bus Departure and Arrival Times</h2>
+        <p data-translate="notice-description">Please note that all departure and arrival times provided are approximate and subject to slight adjustments due to unforeseen circumstances. While we strive to maintain our schedule as accurately as possible, factors such as traffic, weather conditions, or operational delays may result in minor changes. We appreciate your understanding and recommend allowing extra time in your travel plans to accommodate any slight variations. Thank you for choosing our service.</p>
+    </section>
+    <br>
+    <br>
+    <br>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-left">
+            <select id="language" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="ss">Siswati</option>
+            </select>
+        </div>
+        <div class="footer-center">
+            <p>© 2024 BRAND INC. • PRIVACY • TERMS • SITEMAP</p>
+        </div>
+        <div class="footer-right">
+            <a href="#"><img src="icons8-x-50.png" alt="Twitter"></a>
+            <a href="#"><img src="icons8-instagram-50.png" alt="Instagram"></a>
+            <a href="#"><img src="icons8-facebook-50.png" alt="Facebook"></a>
+            <a href="#"><img src="icons8-youtube-50.png" alt="YouTube"></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

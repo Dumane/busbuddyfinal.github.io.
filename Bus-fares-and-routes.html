@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusBuddy</title>
+    <style>
+       * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #fff;
+    }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+        .navbar a.active {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            width: 30px;
+            margin-right: 10px;
+        }
+        .navbar .logo span {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .navbar .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        .navbar .contact-btn {
+            background-color: #666;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #f1f1f1;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .table-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        th {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        td {
+            color: #555;
+        }
+
+        /* smoothly transition background when hovering */
+.table-container table tbody tr {
+  transition: background 0.25s ease;
+}
+
+/* highlight entire row on hover */
+.table-container table tbody tr:hover {
+  background-color: #f0f8ff;   /* light‐blue highlight, pick any color you like */
+  cursor: pointer;             /* makes it obvious it’s clickable */
+}
+
+/* (optional) if you’d rather only highlight the cell under your mouse: */
+.table-container table tbody td:hover {
+  background-color: #f5f5f5;
+}
+        .available {
+            color: green;
+            font-weight: bold;
+        }
+        .unavailable {
+            color: red;
+            font-weight: bold;
+        }
+       .map-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  margin-bottom: 80px; /* Adjust the value to be equal or slightly higher than your footer height */
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .pagination button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .main-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000; /* dark background */
+  color: #fff;            /* white text */
+  z-index: 100;           /* ensure it stays on top */
+}
+
+.footer-left select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-right a {
+  margin: 0 10px;
+}
+
+.footer-right img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px 0;
+            background-color: #f9f9f9;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        .date-container {
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="250" height="60" viewBox="0 0 250 60">
+                <text x="0" y="45" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="48" fill="#1a73e8">
+                    BusBuddy
+                </text>
+            </svg>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" data-translate="nav-home">Home</a>
+            <a href="Find-your-schedule.html" data-translate="nav-schedule">Find Your Bus Schedule</a>
+            <a href="Bus-fares-and-routes.html" class="active" data-translate="nav-travel-date">Bus Fares and Routes</a>
+        </div>
+        <button class="contact-btn" data-translate="contact-btn" onclick="window.location.href='contact-us.html'">? Contact Us</button>
+    </div>
+
+    <div class="container">
+    <div class="date-container" id="current-date"></div>
+    <h2 data-translate="bus-route-options">Bus Route Options</h2>
+    <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th data-translate="route">Route Number</th>
+                        <th data-translate="departure">Departure</th>
+                        <th data-translate="arrival">Destination</th>
+                        <th data-translate="duration">Duration</th>
+                        <th data-translate="price">Price</th>
+                        <th data-translate="availability">Availability</th>
+                    </tr>
+                </thead>
+                <tbody id="bus-table-body">
+                    <!-- Rows will be populated by JavaScript -->
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button id="prev-page" disabled>←</button>
+                <button id="next-page">→</button>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-left">
+            <select id="language" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="ss">Siswati</option>
+            </select>
+        </div>
+        <div class="footer-center">
+            <p>© 2024 BRAND INC. • PRIVACY • TERMS • SITEMAP</p>
+        </div>
+        <div class="footer-right">
+            <a href="#"><img src="icons8-x-50.png" alt="Twitter"></a>
+            <a href="#"><img src="icons8-instagram-50.png" alt="Instagram"></a>
+            <a href="#"><img src="icons8-facebook-50.png" alt="Facebook"></a>
+            <a href="#"><img src="icons8-youtube-50.png" alt="YouTube"></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</script>
+
+    <!-- Google Maps API Script -->
+    <script>
+    let map;
+    let routes = [];
+    let currentPage = 1;
+    const rowsPerPage = 5;
+
+    // Set current day and date in the date-container
+    function displayCurrentDate() {
+        const dateContainer = document.getElementById('current-date');
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateContainer.textContent = today.toLocaleDateString('en-US', options);
+    }
+
+    // Call the function to display the date
+    displayCurrentDate();
+
+    // Initialize map with default center
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 10,
+            center: { lat: -26.3167, lng: 31.1333 }, // Default: Mbabane
+        });
+    }
+
+    // Fetch JSON data and populate table
+    async function fetchBusRoutes() {
+        try {
+            const response = await fetch('busData.json');
+            routes = await response.json();
+            displayTable(currentPage);
+            updatePagination();
+        } catch (error) {
+            console.error('Error fetching bus routes:', error);
+            alert('Failed to load bus routes. Please try again later.');
+        }
+    }
+
+    // Display table rows for current page
+    function displayTable(page) {
+        const tableBody = document.getElementById('bus-table-body');
+        tableBody.innerHTML = '';
+
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const pageRoutes = routes.slice(start, end);
+
+        pageRoutes.forEach(route => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${route.route}</td>
+                <td>${route.departure}</td>
+                <td>${route.arrival}</td>
+                <td>${route.journey}</td>
+                <td>${route.fare}</td>
+                <td class="${route.available ? 'available' : 'unavailable'}">
+                    ${route.available ? 'Available' : 'Unavailable'}
+                </td>
+            `;
+            row.addEventListener('click', () => showRouteMap(route));
+            tableBody.appendChild(row);
+        });
+    }
+
+    // Show map for selected route
+    // Show map for selected route
+function showRouteMap(route) {
+    const bounds = new google.maps.LatLngBounds();
+    map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 10,
+        center: route.departureCoords,
+    });
+
+    const waypoints = [];
+
+    // Add Hlatsi stop for MR 3 route buses
+    if (route.via === "MR 3") {
+        waypoints.push({ location: { lat: -26.97, lng: 31.32 } }); // Example coordinates for Hlatsi
+    }
+
+    // Add Mankayane stop for buses via Mankayane
+    if (route.via.includes("Mankayane")) {
+        waypoints.push({ location: { lat: -26.6833, lng: 31.0833 } }); // Example coordinates for Mankayane
+    }
+
+    if (route.path && route.path !== "encoded_polyline_string_here") {
+        // Use cached polyline
+        const path = google.maps.geometry.encoding.decodePath(route.path);
+        const polyline = new google.maps.Polyline({
+            path: path,
+            geodesic: true,
+            strokeColor: "#FF0000",
+            strokeOpacity: 1.0,
+            strokeWeight: 2,
+        });
+        polyline.setMap(map);
+
+        // Add markers
+        new google.maps.Marker({
+            position: route.departureCoords,
+            map: map,
+            title: route.departure,
+        });
+
+        new google.maps.Marker({
+            position: route.destinationCoords,
+            map: map,
+            title: route.destination,
+        });
+
+        bounds.extend(route.departureCoords);
+        bounds.extend(route.destinationCoords);
+        map.fitBounds(bounds);
+    } else {
+        // Use Directions API with waypoints
+        const directionsService = new google.maps.DirectionsService();
+        const directionsRenderer = new google.maps.DirectionsRenderer({
+            map: map,
+            suppressMarkers: false,
+            polylineOptions: {
+                strokeColor: "#FF0000",
+                strokeOpacity: 1.0,
+                strokeWeight: 2,
+            },
+        });
+
+        directionsService.route(
+            {
+                origin: route.departureCoords,
+                destination: route.destinationCoords,
+                waypoints: waypoints,
+                travelMode: google.maps.TravelMode.DRIVING,
+            },
+            (result, status) => {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    directionsRenderer.setDirections(result);
+                    console.log("Encoded polyline:", result.routes[0].overview_polyline);
+                } else {
+                    console.error("Directions request failed:", status);
+                    
+                    // Fallback: Add markers and a straight-line route
+                    new google.maps.Marker({
+                        position: route.departureCoords,
+                        map: map,
+                        title: route.departure,
+                    });
+
+                    new google.maps.Marker({
+                        position: route.destinationCoords,
+                        map: map,
+                        title: route.destination,
+                    });
+
+                    const fallbackPath = new google.maps.Polyline({
+                        path: [route.departureCoords, route.destinationCoords],
+                        geodesic: true,
+                        strokeColor: "#FF0000",
+                        strokeOpacity: 1.0,
+                        strokeWeight: 2,
+                    });
+                    fallbackPath.setMap(map);
+
+                    bounds.extend(route.departureCoords);
+                    bounds.extend(route.destinationCoords);
+                    map.fitBounds(bounds);
+                    alert("Could not load route. Showing approximate path.");
+                }
+            }
+        );
+    }
+ // Smooth scroll to the map container
+    document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+
+    // Update pagination buttons
+    function updatePagination() {
+        const prevButton = document.getElementById('prev-page');
+        const nextButton = document.getElementById('next-page');
+        const totalPages = Math.ceil(routes.length / rowsPerPage);
+
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage === totalPages;
+    }
+
+    // Pagination event listeners
+    document.getElementById('prev-page').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            displayTable(currentPage);
+            updatePagination();
+        }
+    });
+
+    document.getElementById('next-page').addEventListener('click', () => {
+        const totalPages = Math.ceil(routes.length / rowsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayTable(currentPage);
+            updatePagination();
+        }
+    });
+
+    // Initialize
+    fetchBusRoutes();
+</script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOaOOOmmUKhhguhOxhyOjyUEP-dWcXJ0g&libraries=geometry,directions&callback=initMap">
+</script>
+</body>
+</html>
