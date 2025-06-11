@@ -267,11 +267,11 @@ nav ul li a.active {
         height: 150px; /* Smaller height for mobile */
     }
 
-    .main-footer {
+   .main-footer {
         flex-direction: column;
         text-align: center;
         padding: 15px;
-        position: fixed;
+        position: relative;
         bottom: 0;
         left: 0;
         width: 100%;
@@ -307,38 +307,3 @@ nav ul li a.active {
     .hero h1 {
         font-size: 1.5rem;
     }
-
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    .bus-images img {
-        height: 120px; /* Further reduce image size */
-    }
-
-    .bus-images {
-        flex-direction: row; /* Keep images side by side */
-        gap: 6px; /* Even smaller gap for smaller screens */
-        justify-content: center;
-    }
-
-    .bus-images img {
-        max-width: 45%; /* Each image takes up to 45% of container width */
-        height: 120px; /* Further reduced height for smaller screens */
-    }
-
-    .service-overview h2,
-    .informational-overview h2 {
-        font-size: 1.3rem;
-        padding-bottom: 80px; /* Ensure space for fixed footer */
-    }
-
-    .service-overview p,
-    .informational-overview p {
-        font-size: 0.9rem;
-    }
-
-    .footer-links a {
-        font-size: 0.9rem;
-    }
-}
