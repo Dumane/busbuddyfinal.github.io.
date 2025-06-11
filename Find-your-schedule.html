@@ -182,6 +182,114 @@
   height: 24px;
   object-fit: contain;
 }
+
+
+
+
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header items */
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items */
+        gap: 5px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .search-section {
+        margin-top: 3rem;
+        padding: 2rem 3%;
+    }
+
+    .search-section h1 {
+        font-size: 1.75rem;
+    }
+
+    .search-form {
+        max-width: 90%;
+        padding: 0.5rem 1rem;
+    }
+
+    .search-form:hover {
+        max-width: 95%;
+    }
+
+    .search-form input {
+        font-size: 1rem;
+    }
+
+    .suggestions-box {
+        width: 95%;
+    }
+
+  .main-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        z-index: 100;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        margin: 5px 0;
+    }
+
+    .footer-right a {
+        margin: 0 5px;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    nav ul li a {
+        font-size: 0.875rem;
+    }
+
+    .contact-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .search-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .search-form {
+        max-width: 100%;
+    }
+
+    .search-form input {
+        font-size: 0.9rem;
+    }
+
+    .suggestions-box {
+        width: 100%;
+    }
+}
+    
   </style>
 </head>
 <body>
