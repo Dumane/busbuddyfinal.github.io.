@@ -249,7 +249,7 @@ footer {
 
 
 
-        /* Media Queries for Mobile Responsiveness */
+      /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
     header {
         flex-direction: column; /* Stack header items */
@@ -304,10 +304,17 @@ footer {
         max-width: 100%; /* Full width on mobile */
     }
 
-    footer {
-        flex-direction: column; /* Stack footer items */
+    .main-footer {
+        flex-direction: column;
         text-align: center;
-        gap: 10px;
+        padding: 15px;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        z-index: 100;
     }
 
     .footer-links {
