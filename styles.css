@@ -251,12 +251,33 @@ nav ul li a.active {
     .service-overview p,
     .informational-overview p {
         font-size: 1rem;
+         padding-bottom: 80px; /* Ensure space for fixed footer */
+    }
+
+
+
+    .bus-images {
+        flex-direction: row; /* Keep images side by side */
+        gap: 8px; /* Slightly smaller gap for mobile */
+        justify-content: center;
+    }
+
+    .bus-images img {
+        max-width: 45%; /* Each image takes up to 45% of container width */
+        height: 150px; /* Smaller height for mobile */
     }
 
     .main-footer {
         flex-direction: column;
         text-align: center;
         padding: 15px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        z-index: 100;
     }
 
     .footer-left, .footer-center, .footer-right {
@@ -266,6 +287,7 @@ nav ul li a.active {
     .footer-right a {
         margin: 0 5px;
     }
+
 }
 
 @media (max-width: 480px) {
@@ -294,9 +316,21 @@ nav ul li a.active {
         height: 120px; /* Further reduce image size */
     }
 
+    .bus-images {
+        flex-direction: row; /* Keep images side by side */
+        gap: 6px; /* Even smaller gap for smaller screens */
+        justify-content: center;
+    }
+
+    .bus-images img {
+        max-width: 45%; /* Each image takes up to 45% of container width */
+        height: 120px; /* Further reduced height for smaller screens */
+    }
+
     .service-overview h2,
     .informational-overview h2 {
         font-size: 1.3rem;
+        padding-bottom: 80px; /* Ensure space for fixed footer */
     }
 
     .service-overview p,
@@ -307,10 +341,4 @@ nav ul li a.active {
     .footer-links a {
         font-size: 0.9rem;
     }
-}
-
-.footer-right img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
 }
