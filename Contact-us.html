@@ -249,6 +249,130 @@ footer {
 
 
 
+        /* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header items */
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items */
+        gap: 5px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .features-section,
+    .newsletter-section,
+    .contact-section {
+        padding: 20px 10px;
+    }
+
+    .features {
+        flex-direction: column; /* Stack features */
+        gap: 15px;
+    }
+
+    .feature-item {
+        flex: 1 0 100%; /* Full width on mobile */
+        text-align: center;
+    }
+
+    .description {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .newsletter-section h2,
+    .contact-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column; /* Stack form inputs */
+        align-items: center;
+    }
+
+    .newsletter-form input {
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    footer {
+        flex-direction: column; /* Stack footer items */
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-links {
+        flex-direction: column; /* Stack footer links */
+        gap: 15px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-right {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    nav ul li a {
+        font-size: 0.875rem;
+    }
+
+    .contact-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .features-section,
+    .newsletter-section,
+    .contact-section {
+        font-size: 0.875rem;
+    }
+
+    .newsletter-section h2,
+    .contact-section h2 {
+        font-size: 1rem;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button,
+    .contact-form button {
+        padding: 6px 12px;
+        font-size: 0.875rem;
+    }
+
+    .form-group label {
+        font-size: 0.75rem;
+    }
+
+    .footer-column h3 {
+        font-size: 0.875rem;
+    }
+
+    .footer-column a,
+    .footer-bottom,
+    .footer-legal a {
+        font-size: 0.75rem;
+    }
+}
+
+
     </style>
 </head>
 <body>
