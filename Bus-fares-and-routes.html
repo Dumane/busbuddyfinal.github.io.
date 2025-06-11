@@ -200,6 +200,110 @@
     font-size: 16px;
     color: #333;
 }
+
+
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items */
+        text-align: center;
+    }
+
+    .navbar .logo {
+        margin-bottom: 10px;
+    }
+
+    .navbar .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .navbar .nav-links a {
+        margin: 5px 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 0.75rem;
+    }
+
+    .map-container {
+        height: 200px; /* Smaller map on mobile */
+        padding-bottom: 15px; /* Ensure space for fixed footer */
+    }
+
+    .footer-links {
+        flex-direction: column; /* Stack footer links */
+        gap: 10px;
+    }
+
+   .main-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        z-index: 100;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        margin: 5px 0;
+    }
+
+    .footer-right a {
+        margin: 0 5px;
+    }
+
+    .date-container {
+        text-align: center;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo span {
+        font-size: 1rem;
+    }
+
+    .navbar .nav-links a {
+        font-size: 0.875rem;
+    }
+
+    .navbar .contact-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .pagination button {
+        padding: 5px 8px;
+        font-size: 0.75rem;
+    }
+
+    .footer-links a {
+        font-size: 0.75rem;
+    }
+}
+
+        
     </style>
 </head>
 <body>
