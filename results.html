@@ -405,6 +405,139 @@
   border-radius: 10px;
 }
 
+
+
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header items */
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items */
+        gap: 5px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .results-container {
+        flex-direction: column; /* Stack calendar and buses */
+    }
+
+    .calendar,
+    .available-buses {
+        flex: 1; /* Equal width on mobile */
+    }
+
+    .bus-card {
+        padding: 15px; /* Reduced padding */
+    }
+
+    .bus-card img {
+        position: static; /* Remove absolute positioning */
+        width: 100%;
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    .bus-card-buttons {
+        position: static; /* Remove absolute positioning */
+        margin-top: 10px;
+    }
+
+    .route-cards-container {
+        flex-direction: column; /* Stack route cards */
+        padding-bottom: 100px; /* Ensure space for fixed footer */
+    }
+
+    .route-card {
+        min-width: 100%; /* Full width on mobile */
+    }
+
+     .main-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        z-index: 100;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        margin: 5px 0;
+    }
+
+    .footer-right a {
+        margin: 0 5px;
+    }
+
+
+    .modal-content {
+        width: 95%; /* Nearly full width on mobile */
+    }
+
+    #currentTime {
+        font-size: 1.5rem;
+    }
+
+    #currentDate {
+        font-size: 0.875rem;
+    }
+
+    .map-container {
+        height: 200px; /* Smaller map on mobile */
+        padding-bottom: 80px; /* Ensure space for fixed footer */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    nav ul li a {
+        font-size: 0.875rem;
+    }
+
+    .contact-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .route-header,
+    .available-buses h4,
+    .popular-routes h4 {
+        font-size: 1.25rem;
+    }
+
+    .calendar h3,
+    .bus-card h5,
+    .route-card h5 {
+        font-size: 0.875rem;
+    }
+
+    .calendar-days,
+    .calendar-dates div,
+    .bus-card p,
+    .route-card p {
+        font-size: 0.75rem;
+    }
+}
+
+
+
+    
   </style>
 </head>
 <body>
