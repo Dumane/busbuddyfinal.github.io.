@@ -45,6 +45,10 @@ const translations = {
         'contact_description_1': 'We would love to hear from you. Whether you have questions, feedback or just want to say hello feel free to reach out using any of the methods below.',
         'contact_description_2': 'Alternatively you can fill out our contact form and we will get back to you as soon as possible. Thank you for reaching out we appreciate your time and look forward to connecting with you.',
 
+
+        'email': 'BusBuddy@gmail.com',
+        'phone': '2505 4095',
+        
         // Contact Section
         'contact_section_title': 'Contact Us',
         'name_label': 'Name',
@@ -126,6 +130,10 @@ const translations = {
         'contact_description_1': 'Sitawutsandza kuva kuwe. Uma unemibuto, imibono nobe ufuna nje kusho kutsi sawubona, tive ukhululekile kutsi usebentise nobe nguyiphi indlela lengentasi.',
         'contact_description_2': 'Kantsi ungagcwalisa lifomu lekuchumana bese siphendvula ngekushesha. Siyabonga ngekutsintsana natsi siyabonga ngesikhatsi sakho futsi sifisa kuchumana nawe.',
 
+
+        'email': 'BusBuddy@gmail.com',
+        'phone': '2505 4095',
+        
         // Contact Section
         'contact_section_title': 'Tsintsana Natsi',
         'name_label': 'Ligama',
