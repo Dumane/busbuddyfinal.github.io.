@@ -249,7 +249,7 @@ footer {
 
 
 
-      /* Media Queries for Mobile Responsiveness */
+   /* Media Queries for Mobile */
 @media (max-width: 768px) {
     header {
         flex-direction: column; /* Stack header items */
@@ -269,30 +269,20 @@ footer {
         margin: 5px 0;
     }
 
-    .features-section,
-    .newsletter-section,
-    .contact-section {
-        padding: 20px 10px;
-    }
-
     .features {
         flex-direction: column; /* Stack features */
         gap: 15px;
     }
 
     .feature-item {
-        flex: 1 0 100%; /* Full width on mobile */
+        flex-direction: column; /* Stack feature content */
+        align-items: center;
         text-align: center;
     }
 
     .description {
-        font-size: 1rem;
+        flex-direction: column; /* Stack description */
         text-align: center;
-    }
-
-    .newsletter-section h2,
-    .contact-section h2 {
-        font-size: 1.25rem;
     }
 
     .newsletter-form {
@@ -301,83 +291,79 @@ footer {
     }
 
     .newsletter-form input {
-        max-width: 100%; /* Full width on mobile */
+        width: 100%; /* Full-width input */
+        max-width: none;
     }
 
-    .main-footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
-        position: relative;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #000;
-        color: #fff;
-        z-index: 100;
+    .newsletter-form button {
+        width: 100%; /* Full-width button */
+    }
+
+    .contact-form {
+        max-width: 100%; /* Full width on small screens */
     }
 
     .footer-links {
-        flex-direction: column; /* Stack footer links */
+        flex-direction: column; /* Stack footer columns */
         gap: 15px;
     }
 
     .footer-bottom {
-        flex-direction: column;
+        flex-direction: column; /* Stack footer bottom */
+        text-align: center;
         gap: 10px;
     }
 
-    .footer-right {
-        margin-top: 10px;
+    .footer-right img {
+        margin: 5px; /* Adjust icon spacing */
     }
 }
 
+/* Extra Small Screens (e.g., phones below 480px) */
 @media (max-width: 480px) {
     .logo {
-        font-size: 1.25rem;
+        font-size: 18px; /* Even smaller logo */
     }
 
     nav ul li a {
-        font-size: 0.875rem;
-    }
-
-    .contact-btn {
-        padding: 6px 12px;
-        font-size: 0.75rem;
+        font-size: 12px; /* Smaller nav links */
     }
 
     .features-section,
     .newsletter-section,
     .contact-section {
-        font-size: 0.875rem;
+        padding: 20px 10px; /* Further reduced padding */
     }
 
     .newsletter-section h2,
     .contact-section h2 {
-        font-size: 1rem;
+        font-size: 18px; /* Smaller headings */
     }
 
-    .newsletter-form input,
-    .newsletter-form button,
-    .contact-form button {
+    .form-group input,
+    .form-group textarea {
+        font-size: 12px; /* Smaller input font */
+    }
+
+    .contact-form button,
+    .newsletter-form button {
+        font-size: 12px; /* Smaller button font */
         padding: 6px 12px;
-        font-size: 0.875rem;
-    }
-
-    .form-group label {
-        font-size: 0.75rem;
     }
 
     .footer-column h3 {
-        font-size: 0.875rem;
+        font-size: 12px; /* Smaller footer headings */
     }
 
-    .footer-column a,
-    .footer-bottom,
-    .footer-legal a {
-        font-size: 0.75rem;
+    .footer-column a {
+        font-size: 10px; /* Smaller footer links */
+    }
+
+    .footer-bottom {
+        font-size: 10px; /* Smaller footer text */
     }
 }
+
 
 
     </style>
