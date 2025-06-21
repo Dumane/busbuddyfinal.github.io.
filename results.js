@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayResults();
   }, 60000);
 
+});
 
 // Display the search results
 async function displayResults() {
