@@ -86,14 +86,23 @@ const route = urlParams.get("route");
  * with the 24-hour formatted hours and minutes.
  */
 function parseTime(timeStr) {
-  // Create a Date using a fixed date and the time string.
-  // If timeStr includes AM/PM, the Date constructor will adjust accordingly.
-  // For example, "11:40 PM" becomes 23:40.
-  let date = new Date("1970-01-01 " + timeStr);
-  return {
-    hours: date.getHours(),
-    minutes: date.getMinutes()
-  };
+  // Handle cases where time might be in 24-hour format or have issues
+  let time = timeStr.trim().toUpperCase();
+  let hours, minutes;
+  
+  // Check for AM/PM format
+  if (time.includes('AM') || time.includes('PM')) {
+    const date = new Date(`1970-01-01 ${time}`);
+    hours = date.getHours();
+    minutes = date.getMinutes();
+  } else {
+    // Assume 24-hour format
+    const parts = time.split(':');
+    hours = parseInt(parts[0], 10);
+    minutes = parseInt(parts[1], 10) || 0;
+  }
+  
+  return { hours, minutes };
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -115,6 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Display the search results
+console.log("User Agent:", navigator.userAgent);
+console.log("Current timezone offset:", new Date().getTimezoneOffset());
+console.log("Initial date:", initialDate);
 async function displayResults() {
   if (!route) {
     document.getElementById("busList").innerHTML =
@@ -136,28 +148,33 @@ async function displayResults() {
     document.getElementById("toLocation").textContent = to ? ` ${to.trim()} ` : " Unknown ";
 
     // Get the current time and date for filtering
-    const now = new Date();
-    const currentDate = now.toDateString();
+const now = new Date();
+const currentDate = now.toDateString();
+console.log("Current time:", now.toLocaleTimeString(), "Filtering for route:", route);
 
-    let availableBuses;
-    // If we're still on the same day, filter based on departure times
-    if (currentDate === initialDate) {
-      availableBuses = busData.filter(bus => {
-        // Use the helper function to parse the bus departure time.
-        const { hours: depHours, minutes: depMinutes } = parseTime(bus.departure);
-        return (
-          bus.route.toLowerCase() === route.toLowerCase() &&
-          bus.available &&
-          (now.getHours() < depHours ||
-           (now.getHours() === depHours && now.getMinutes() < depMinutes))
-        );
-      });
-    } else {
-      // A new day has started; show all available buses (i.e. reset the filtering)
-      availableBuses = busData.filter(bus =>
-        bus.route.toLowerCase() === route.toLowerCase() && bus.available
-      );
+let availableBuses;
+if (currentDate === initialDate) {
+  availableBuses = busData.filter(bus => {
+    if (bus.route.toLowerCase() !== route.toLowerCase() || !bus.available) {
+      return false;
     }
+    
+    try {
+      const { hours: depHours, minutes: depMinutes } = parseTime(bus.departure);
+      console.log(`Bus ${bus.busName} departs at ${depHours}:${depMinutes}`);
+      
+      return (now.getHours() < depHours ||
+             (now.getHours() === depHours && now.getMinutes() < depMinutes));
+    } catch (e) {
+      console.error("Error parsing time for bus:", bus, e);
+      return false;
+    }
+  });
+} else {
+  availableBuses = busData.filter(bus => 
+    bus.route.toLowerCase() === route.toLowerCase() && bus.available
+  );
+}
 
     console.log("Filtered available buses:", availableBuses.length);
 
