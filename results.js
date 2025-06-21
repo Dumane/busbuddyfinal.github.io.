@@ -112,15 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     displayResults();
   }, 60000);
 
-  // Create and add a one-time reset button to the page
-  const oneTimeResetButton = document.createElement("button");
-  oneTimeResetButton.textContent = "Reset Filtering Once";
-  oneTimeResetButton.onclick = () => {
-    resetFilteringOnce();
-    oneTimeResetButton.disabled = true;
-  };
-  document.body.appendChild(oneTimeResetButton);
-});
 
 // Display the search results
 async function displayResults() {
