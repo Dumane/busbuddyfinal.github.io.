@@ -203,6 +203,12 @@ nav ul li a.active {
   margin: 0 10px;
 }
 
+.footer-right img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
 
 
 
