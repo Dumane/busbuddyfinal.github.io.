@@ -150,28 +150,70 @@
     }
 
     .bus-card {
-        padding: 15px; /* Reduced padding */
-    }
+  position: relative; /* Enables absolute positioning for children */
+  background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+  border-radius: 10px;
+  border: 1px solid #e0e0e0; /* Border added back */
+  /* Padding order: top, right, bottom, left */
+  padding: 20px 140px 60px 20px;  
+  margin-bottom: 15px;
+  max-width: 1200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
 
-    .bus-card img {
-        position: static; /* Remove absolute positioning */
-        width: 100%;
-        max-width: 100%; /* Full width on mobile */
-    }
+.bus-card:hover {
+  transform: translateY(-3px);
+}
 
-    .bus-card-buttons {
-        position: static; /* Remove absolute positioning */
-        margin-top: 10px;
-    }
+/* The image is now positioned at the top right corner */
+.bus-card img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  width: auto;
+  max-width: calc(140px - 40px); /* The reserved right padding (140px) minus 20px on each side = 100px max width */
+  object-fit: cover;
+  border-radius: 8px;
+}
 
-    .route-cards-container {
-        flex-direction: column; /* Stack route cards */
-        padding-bottom: 100px; /* Ensure space for fixed footer */
-    }
 
-    .route-card {
-        min-width: 100%; /* Full width on mobile */
-    }
+
+.bus-card h5 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.bus-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.bus-card-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.bus-card-buttons button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 10px;
+}
+
+.bus-card-buttons button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
     #moreBuses {
       margin-top: 10px;
     }
@@ -363,9 +405,6 @@
   border-radius: 10px;
 }
 
-
-
-
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
     header {
@@ -493,10 +532,6 @@
     }
 }
 
-
-
-
-    
   </style>
 </head>
 <body>
@@ -515,7 +550,7 @@
         <li><a href="Bus-fares-and-routes.html" data-translate="nav-travel-date">Bus Fares and Routes</a></li>
       </ul>
     </nav>
-    <button class="contact-btn" data-translate="contact-btn" onclick="window.location.href='Contact-us.html'">? Contact Us</button>
+    <button class="contact-btn" data-translate="contact-btn" onclick="window.location.href='contact-us.html'">? Contact Us</button>
   </header>
 
  <main>
