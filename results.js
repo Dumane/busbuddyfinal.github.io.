@@ -222,6 +222,20 @@ if (availableBuses.length > 2) {
   moreBuses.style.display = "none";
 }
 
+
+try {
+  const response = await fetch("busData.json");
+  if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+  busData = await response.json();
+  console.log("Loaded bus data:", busData.length, "entries");
+} catch (error) {
+  console.error("Error loading bus data:", error);
+  document.getElementById("busList").innerHTML = 
+    `<p data-translate="error-loading">${translations[lang]['error-loading']}</p>`;
+  return;
+}
+
+    
 // Create the Reset button globally
 const resetButton = document.createElement("button");
 resetButton.textContent = "Reset Buses";
