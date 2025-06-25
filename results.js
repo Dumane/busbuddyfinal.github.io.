@@ -86,23 +86,22 @@ const route = urlParams.get("route");
  * with the 24-hour formatted hours and minutes.
  */
 function parseTime(timeStr) {
-  // Handle cases where time might be in 24-hour format or have issues
+  // Handle 24-hour format (e.g., "13:45") and 12-hour format (e.g., "1:45 PM")
   let time = timeStr.trim().toUpperCase();
-  let hours, minutes;
-  
-  // Check for AM/PM format
-  if (time.includes('AM') || time.includes('PM')) {
-    const date = new Date(`1970-01-01 ${time}`);
-    hours = date.getHours();
-    minutes = date.getMinutes();
-  } else {
-    // Assume 24-hour format
-    const parts = time.split(':');
-    hours = parseInt(parts[0], 10);
-    minutes = parseInt(parts[1], 10) || 0;
+  let [timePart, period] = time.split(/\s+/);
+  let [hours, minutes] = timePart.split(':').map(Number);
+
+  // Convert 12-hour to 24-hour format if needed
+  if (period === 'PM' && hours < 12) {
+    hours += 12;
+  } else if (period === 'AM' && hours === 12) {
+    hours = 0;
   }
-  
-  return { hours, minutes };
+
+  return {
+    hours: hours,
+    minutes: minutes || 0
+  };
 }
 
 document.addEventListener('DOMContentLoaded', () => {
