@@ -205,8 +205,8 @@ function updateLanguage(lang) {
     }
     const featureItems = document.querySelectorAll('.features .feature-item');
     if (featureItems.length > 0) {
-        featureItems[0].textContent = `📧 BusBuddy@gmail.com: ${translations[lang].email}`;
-        featureItems[1].textContent = `📞 2505 4095: ${translations[lang].phone}`;
+        featureItems[0].textContent = `📧 : ${translations[lang].email}`;
+        featureItems[1].textContent = `📞 : ${translations[lang].phone}`;
     }
 
     // Update contact section
